@@ -1,0 +1,66 @@
+@use '@carbon/react/scss/colors' as *;
+@use '@carbon/react/scss/spacing' as *;
+
+// overriding header tooltip bg color
+// because the navigation is dark themed while the content is white
+// which means the dark theme tooltip bg blends into the white content bg
+.cds--header__global .cds--popover-content {
+  background-color: $gray-20;
+}
+
+.cds--header__global .cds--popover-caret {
+  background-color: $gray-20;
+}
+
+.header-wrapper {
+  background-color: $gray-100;
+  width: 100vw;
+}
+
+.cds--header {
+  max-width: 1440px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.cds--header__nav .cds--header__menu-item {
+  cursor: pointer;
+}
+
+.notification-menu {
+  position: absolute;
+  top: calc(48px + $spacing-04);
+  right: $spacing-04 * 2;
+  padding: $spacing-05;
+  background: $gray-100;
+  z-index: 1000;
+}
+
+.user-menu {
+  position: absolute;
+  top: calc(48px + $spacing-04);
+  right: $spacing-04 * 2;
+  background: $gray-100;
+  padding: $spacing-05;
+  z-index: 1000;
+}
+
+.user-menu .right-btn {
+  margin-left: $spacing-04;
+}
+
+.user-menu p {
+  margin-bottom: $spacing-04;
+}
+
+.header-panel {
+  right: calc((100vw - 1440px) / 2);
+  display: block !important;
+  visibility: visible !important;
+}
+
+@media (max-width: 320px) {
+  .action-icons {
+    display: none;
+  }
+}

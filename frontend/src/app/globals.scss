@@ -1,0 +1,62 @@
+@use '@carbon/react';
+@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/react/scss/colors' as *;
+
+@use '@/components/BasicHeader/basic-header';
+@use '@/components/BasicFooter/basic-footer';
+@use '@/components/Info/info';
+@use '@/components/Table/table';
+@use '@/components/EditModal/edit-modal';
+
+@use '@/app/landing/landing-page';
+@use '@/app/login/login-page';
+@use '@/app/register/register-page';
+@use '@/app/information/information-page';
+@use '@/app/patient-appointment/patient-appointment-page';
+@use '@/app/patient-scheduling/patient-scheduling-page';
+@use '@/app/physician-appointment/physician-appointment-page';
+@use '@/app/physician-scheduling/physician-scheduling-page';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.content {
+  flex: 1;
+}
+
+/// Remove overrides once Carbon bugs are fixed upstream.
+/// Need grid option to not add page gutters at large viewports, to also use when nesting grids
+@media (min-width: 42rem) {
+  .cds--grid--no-gutter {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/// Padding was introduced in 10.3.0, needs an option to let grid set the viewport gutter
+.cds--content {
+  max-width: 1440px;
+  height: auto;
+  margin: 0 auto !important;
+  background: var(--cds-background);
+  padding: 0;
+  flex: 1;
+}

@@ -1,0 +1,127 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/colors' as *;
+
+@use './overrides' as loginOverrides;
+
+html {
+  background-color: $layer-01;
+}
+
+.pw_input .pw-toggle-btn {
+  position: absolute;
+  right: 0;
+  top: 74%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.login-page {
+  margin: $spacing-08 0;
+  column-gap: $spacing-07;
+}
+
+.login-page__left-column {
+  width: 100%;
+  height: auto;
+}
+
+.inner-wrapper {
+  max-width: 100%;
+}
+
+.form-wrapper {
+  padding-top: $spacing-05;
+  padding-bottom: $spacing-07;
+  border-bottom: 1px solid $border-subtle-02;
+}
+
+.form-wrapper .password-margin {
+  margin-top: $spacing-05;
+}
+
+.form-wrapper .continueBtn {
+  margin-top: $spacing-05;
+  width: 100%;
+  max-width: 100%;
+}
+
+.login-page__heading {
+  @include type-style('productive-heading-05');
+  padding: $spacing-07 0;
+  border-bottom: 1px solid $border-subtle-02;
+}
+
+.login-page__form {
+  padding: $spacing-07;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: $spacing-06;
+  gap: $spacing-03;
+}
+
+.login-page__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: $spacing-06;
+  gap: $spacing-03;
+}
+
+.login-page__text .account-text {
+  color: $text-helper;
+}
+
+.login-page__text button {
+  margin: $spacing-05 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.login-page__text .forgot-section {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-02;
+  padding: $spacing-05 0;
+  border-top: 1px solid $border-subtle-02;
+}
+
+.right-column {
+  width: 600px;
+  height: auto;
+}
+
+.right-column img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1057px) {
+  .right-column {
+    display: none;
+  }
+
+  .left-column {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 672px) {
+  .login-page__form {
+    padding: $spacing-03;
+  }
+}
+
+@media (max-width: 320px) {
+  .login-page__heading {
+    font-size: rem(24px);
+  }
+}

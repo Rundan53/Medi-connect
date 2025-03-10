@@ -1,0 +1,48 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/colors' as *;
+
+.scheduling-grid {
+  width: 100%;
+}
+
+.my-schedule__table .cds--data-table-header {
+  padding-block-end: $spacing-05;
+}
+
+.my-schedule__table .cds--data-table-header__title {
+  margin-bottom: $spacing-05;
+}
+
+.available-status {
+  color: blue;
+}
+
+.pending-status {
+  color: orange;
+}
+
+.booked-status {
+  color: green;
+}
+
+.finished-status {
+  color: red;
+}
+
+.patient-info-modal .description {
+  margin-bottom: $spacing-05;
+}
+
+.patient-info-modal .patient-info-modal__table {
+  margin-bottom: $spacing-05;
+  border: 1px solid $gray-20;
+}
+
+.patient-info-modal .patient-info-modal__table .cds--data-table-header,
+.patient-info-modal .patient-info-modal__table .cds--data-table-content tbody {
+  background-color: $white;
+}
+
+.patient-info-modal .patient-info-modal__table .cds--data-table-content thead {
+  background-color: $gray-10;
+}

@@ -1,0 +1,48 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/colors' as *;
+
+@use './mixins.scss' as *;
+
+.scheduling-grid {
+  padding: 0;
+  width: 100%;
+  height: auto;
+}
+
+.scheduling-page__banner {
+  padding: $spacing-07;
+  margin: 0;
+  max-height: 200px;
+  height: 100vh;
+  @include scheduling-page-background;
+}
+
+.my-schedule__table .cds--data-table-header {
+  padding-top: $spacing-05;
+  padding-left: $spacing-05;
+}
+
+.my-schedule__table .cds--table-toolbar {
+  justify-content: flex-end;
+}
+
+.status-cell.pending {
+  color: orange;
+}
+
+.status-cell.booked {
+  color: green;
+}
+
+.status-cell.finished {
+  color: red;
+}
+
+@media (max-width: 672px) {
+  .info-page__r2 .info-page__content_r {
+    display: none;
+  }
+}

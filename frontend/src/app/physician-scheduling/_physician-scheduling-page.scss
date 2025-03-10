@@ -1,0 +1,139 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/type' as *;
+@use '@carbon/react/scss/breakpoint' as *;
+@use '@carbon/react/scss/theme' as *;
+@use '@carbon/react/scss/colors' as *;
+
+@use './mixins.scss' as *;
+
+.scheduling-grid {
+  padding: 0;
+  width: 1440px;
+  height: auto;
+}
+
+.scheduling-page__banner {
+  padding: $spacing-07;
+  margin: 0;
+  max-height: 200px;
+  height: 100vh;
+  @include scheduling-page-background;
+}
+
+.scheduling-page__date-select {
+  height: auto;
+  margin-left: $spacing-07;
+  padding: $spacing-07 0;
+}
+
+.scheduling__date-picker {
+  margin-bottom: $spacing-07 * 10;
+  width: 289px;
+}
+
+.scheduling__date-picker .cds--date-picker__input {
+  background-color: $white;
+}
+
+.scheduling-page__detail-select {
+  height: auto;
+  margin: 0 $spacing-07;
+  padding: $spacing-07 0;
+}
+
+.detail-select__tile {
+  min-height: 504px;
+  padding-left: 23px;
+}
+
+.location-input {
+  margin-top: $spacing-05;
+}
+
+.detail__time-select {
+  max-width: 308.5px;
+}
+
+.detail__time-select .cds--label {
+  margin-top: $spacing-05;
+}
+
+.location-input {
+  inline-size: 593.5px;
+}
+
+.location-input .cds--text-input {
+  background-color: $white;
+  width: 593.5px;
+  height: 40px;
+}
+
+.detail__time-select .cds--select-input,
+.detail__time-select .cds--time-picker__input-field,
+.detail__interval-dropdown .cds--dropdown {
+  background-color: $white;
+}
+
+.detail__time-select .cds--time-picker__input-field {
+  width: 165px;
+}
+
+.detail__time-select .cds--select-input {
+  width: 120px;
+}
+
+.time-picker__row {
+  display: flex;
+  align-items: center;
+}
+
+.detail__time-select .cds--time-picker__input-field {
+  height: 40px;
+}
+
+.detail__interval-dropdown {
+  margin: $spacing-05 0;
+  width: 285px;
+}
+
+.detail__confirm-btn {
+  margin-top: $spacing-05;
+  margin-left: 310px;
+  min-width: 285px;
+}
+
+.scheduling-page__confirm {
+  height: auto;
+  margin-right: $spacing-07;
+  padding: $spacing-07 0;
+}
+
+.scheduling-page__image-row {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: $spacing-07;
+}
+
+.scheduling-page__illo {
+  width: 100%;
+  max-width: 480px;
+}
+
+@media (max-width: 672px) {
+  .scheduling-page__illo {
+    width: 528px;
+    width: 100%;
+    height: auto;
+    float: inline-start;
+  }
+}
+
+@media (max-width: 320px) {
+  .scheduling-page__illo {
+    display: none;
+  }
+
+  .scheduling-page__banner {
+    padding-bottom: $spacing-05 * 4;
+  }
+}
