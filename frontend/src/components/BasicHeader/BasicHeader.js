@@ -135,7 +135,7 @@ const MediConnectHeader = () => {
             />
 
             <Link href="/">
-              <HeaderName prefix="CodeF">Medi Connect</HeaderName>
+              <HeaderName prefix="HB">Medi Connect</HeaderName>
             </Link>
 
             <HeaderNavigation aria-label="mediC-header">
@@ -148,8 +148,7 @@ const MediConnectHeader = () => {
                   } else if (role === 'Physician') {
                     router.push('/physician-appointment');
                   }
-                }}
-              >
+                }}>
                 Appointment
               </HeaderMenuItem>
               <HeaderMenuItem
@@ -161,8 +160,7 @@ const MediConnectHeader = () => {
                   } else if (role === 'Physician') {
                     router.push('/physician-scheduling');
                   }
-                }}
-              >
+                }}>
                 Scheduling
               </HeaderMenuItem>
             </HeaderNavigation>
@@ -170,8 +168,7 @@ const MediConnectHeader = () => {
             <SideNav
               aria-label="Side navigation"
               expanded={isSideNavExpanded}
-              isPersistent={false}
-            >
+              isPersistent={false}>
               <SideNavItems>
                 <HeaderSideNavItems>
                   <HeaderMenuItem
@@ -183,8 +180,7 @@ const MediConnectHeader = () => {
                       } else if (role === 'Physician') {
                         router.push('/physician-appointment');
                       }
-                    }}
-                  >
+                    }}>
                     Appointment
                   </HeaderMenuItem>
                   <HeaderMenuItem
@@ -196,8 +192,7 @@ const MediConnectHeader = () => {
                       } else if (role === 'Physician') {
                         router.push('/physician-scheduling');
                       }
-                    }}
-                  >
+                    }}>
                     Scheduling
                   </HeaderMenuItem>
                 </HeaderSideNavItems>
@@ -207,8 +202,7 @@ const MediConnectHeader = () => {
             <HeaderGlobalBar>
               <HeaderGlobalAction
                 aria-label="Notifications"
-                onClick={toggleNotificationMenu}
-              >
+                onClick={toggleNotificationMenu}>
                 <Notification size={20} />
               </HeaderGlobalAction>
               {showNotificationMenu && (
@@ -221,8 +215,7 @@ const MediConnectHeader = () => {
                 aria-label="User Avatar"
                 tooltipAlignment="center"
                 onClick={toggleUserMenu}
-                className="action-icons"
-              >
+                className="action-icons">
                 <UserAvatar size={20} />
               </HeaderGlobalAction>
 
@@ -237,16 +230,14 @@ const MediConnectHeader = () => {
                       <Button
                         kind="primary"
                         size="md"
-                        onClick={() => router.push('/information')}
-                      >
+                        onClick={() => router.push('/information')}>
                         My Info
                       </Button>
                       <Button
                         kind="primary"
                         size="md"
                         onClick={handleLogout}
-                        className="right-btn"
-                      >
+                        className="right-btn">
                         Logout
                       </Button>
                     </>
@@ -255,16 +246,14 @@ const MediConnectHeader = () => {
                       <Button
                         kind="primary"
                         size="md"
-                        onClick={() => router.push('/register')}
-                      >
+                        onClick={() => router.push('/register')}>
                         Register
                       </Button>
                       <Button
                         kind="primary"
                         size="md"
                         onClick={() => router.push('/login')}
-                        className="right-btn"
-                      >
+                        className="right-btn">
                         Log In
                       </Button>
                     </>
@@ -275,8 +264,7 @@ const MediConnectHeader = () => {
               <HeaderGlobalAction
                 aria-label={isPanelOpen ? 'Close Switcher' : 'App Switcher'}
                 tooltipAlignment="end"
-                onClick={togglePanel}
-              >
+                onClick={togglePanel}>
                 {isPanelOpen ? <Close size={20} /> : <SwitcherIcon size={20} />}
               </HeaderGlobalAction>
 
@@ -284,8 +272,7 @@ const MediConnectHeader = () => {
                 ref={panelRef}
                 className="header-panel"
                 expanded={isPanelOpen}
-                onHeaderPanelFocus={() => {}}
-              >
+                onHeaderPanelFocus={() => {}}>
                 <Switcher aria-label="Switcher Container">
                   <SwitcherItem aria-label="Macquarie University Official Website">
                     <Link href="https://www.mq.edu.au/">
@@ -311,16 +298,14 @@ const MediConnectHeader = () => {
         open={isLogoutModalOpen}
         onRequestClose={handleLogoutModalClose}
         modalHeading="Logout Successful"
-        passiveModal
-      >
+        passiveModal>
         <p>You have been successfully logged out.</p>
       </Modal>
       <Modal
         open={isLoginCheckModalOpen}
         modalHeading="Please Log In First"
         onRequestClose={handleLogoutModalClose}
-        passiveModal
-      >
+        passiveModal>
         <p>You need to log in or register to access this page.</p>
       </Modal>
     </div>

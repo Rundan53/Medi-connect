@@ -41,13 +41,13 @@ export default function LandingPage() {
             <h1 className="header-text">Medi Connect</h1>
 
             <p className="description-text">
-              CodeF&apos;s <strong>Medi Connect</strong> is a web application
-              designed to streamline appointment management and medical record
-              sharing between patients and healthcare providers. Patients can
-              easily book appointments, and healthcare providers can review
-              patients&apos; medical records in advance, allowing for a more
-              thorough and prepared consultation. Built on FHIR standards,
-              Medi-Connect ensures data consistency and security.
+              HB Studio&apos;s <strong>Medi Connect</strong> is a web
+              application designed to streamline appointment management and
+              medical record sharing between patients and healthcare providers.
+              Patients can easily book appointments, and healthcare providers
+              can review patients&apos; medical records in advance, allowing for
+              a more thorough and prepared consultation. Built on FHIR
+              standards, Medi-Connect ensures data consistency and security.
             </p>
             {!isLoggedIn && (
               <>
@@ -56,8 +56,7 @@ export default function LandingPage() {
                   kind="primary"
                   size="large-productive"
                   onClick={() => router.push('/login')}
-                  renderIcon={ArrowRight}
-                >
+                  renderIcon={ArrowRight}>
                   Log In
                 </Button>
                 <Button
@@ -65,8 +64,7 @@ export default function LandingPage() {
                   kind="tertiary"
                   size="large-productive"
                   onClick={() => router.push('/register')}
-                  renderIcon={ArrowRight}
-                >
+                  renderIcon={ArrowRight}>
                   Join Now!
                 </Button>
               </>

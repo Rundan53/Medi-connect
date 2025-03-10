@@ -3,7 +3,7 @@ import './globals.scss';
 
 export const metadata = {
   title: 'Medi Connect',
-  description: 'Code Fighter Major Project',
+  description: 'HB Web Studio Major Project',
 };
 
 export default function RootLayout({ children }) {
