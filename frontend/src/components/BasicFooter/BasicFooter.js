@@ -11,7 +11,7 @@ export default function Footer() {
           <a>Accessibility</a>
           <a>Cookie preferences</a>
         </nav>
-        <p>Powered by HB Web Studio</p>
+       
       </div>
     </footer>
   );

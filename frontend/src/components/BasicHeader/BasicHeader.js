@@ -135,7 +135,7 @@ const MediConnectHeader = () => {
             />
 
             <Link href="/">
-              <HeaderName prefix="HB">Medi Connect</HeaderName>
+              <HeaderName prefix="Medi-Connect"></HeaderName>
             </Link>
 
             <HeaderNavigation aria-label="mediC-header">
@@ -259,41 +259,12 @@ const MediConnectHeader = () => {
                     </>
                   )}
                 </div>
-              )}
-
-              <HeaderGlobalAction
-                aria-label={isPanelOpen ? 'Close Switcher' : 'App Switcher'}
-                tooltipAlignment="end"
-                onClick={togglePanel}>
-                {isPanelOpen ? <Close size={20} /> : <SwitcherIcon size={20} />}
-              </HeaderGlobalAction>
-
-              <HeaderPanel
-                ref={panelRef}
-                className="header-panel"
-                expanded={isPanelOpen}
-                onHeaderPanelFocus={() => {}}>
-                <Switcher aria-label="Switcher Container">
-                  <SwitcherItem aria-label="Macquarie University Official Website">
-                    <Link href="https://www.mq.edu.au/">
-                      Macquarie University
-                    </Link>
-                  </SwitcherItem>
-                  <SwitcherItem aria-label="HL7 FHIR Official Website">
-                    <Link href="https://hl7.org/fhir/">HL7 FHIR</Link>
-                  </SwitcherItem>
-                  <SwitcherDivider />
-                  <SwitcherItem aria-label="App1">App1</SwitcherItem>
-                  <SwitcherItem aria-label="App2">App2</SwitcherItem>
-                  <SwitcherDivider />
-                  <SwitcherItem aria-label="App3">App3</SwitcherItem>
-                  <SwitcherItem aria-label="App4">App4</SwitcherItem>
-                </Switcher>
-              </HeaderPanel>
+              )}  
             </HeaderGlobalBar>
           </Header>
         )}
       />
+
       <Modal
         open={isLogoutModalOpen}
         onRequestClose={handleLogoutModalClose}

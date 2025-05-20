@@ -1,9 +1,7 @@
 'use client';
 
 import { useAuth } from '@/context/AuthContext';
-
 import { useRouter } from 'next/navigation';
-
 import React, { useState, useEffect } from 'react';
 import { Grid, Column, Button } from '@carbon/react';
 import { ArrowRight } from '@carbon/icons-react';
@@ -14,9 +12,10 @@ import {
   DoctorPatient,
   Handshake,
 } from '@carbon/pictograms-react';
+import './_landing-page.scss';
 
 export default function LandingPage() {
-  const { isLoggedIn } = useAuth();
+  const { isAuthenticated } = useAuth();
   const router = useRouter();
   const [isMounted, setIsMounted] = useState(false);
 
@@ -29,8 +28,30 @@ export default function LandingPage() {
   }
 
   return (
-    <>
-      <Grid className="landing-grid">
+    <div className="landing-page">
+      {!isAuthenticated && (
+        <div className="top-nav">
+          <div className="nav-buttons">
+            <Button
+              kind="tertiary"
+              size="sm"
+              onClick={() => router.push('/login')}>
+              Log In
+            </Button>
+            <Button
+              kind="primary"
+              size="sm"
+              onClick={() => router.push('/register')}>
+              Get Started
+            </Button>
+          </div>
+        </div>
+      )}
+      <div className="welcome-banner">
+        <h2>Welcome to Medi-Connect!!!</h2>
+        <p>Your trusted platform for seamless healthcare management</p>
+      </div>
+      <div className="landing-grid">
         <Column lg={8} md={4} sm={4} className="landing-grid__lc">
           <div className="landing-grid__content-wrapper">
             <img
@@ -49,26 +70,6 @@ export default function LandingPage() {
               a more thorough and prepared consultation. Built on FHIR
               standards, Medi-Connect ensures data consistency and security.
             </p>
-            {!isLoggedIn && (
-              <>
-                <Button
-                  className="landing-button"
-                  kind="primary"
-                  size="large-productive"
-                  onClick={() => router.push('/login')}
-                  renderIcon={ArrowRight}>
-                  Log In
-                </Button>
-                <Button
-                  className="landing-button"
-                  kind="tertiary"
-                  size="large-productive"
-                  onClick={() => router.push('/register')}
-                  renderIcon={ArrowRight}>
-                  Join Now!
-                </Button>
-              </>
-            )}
           </div>
         </Column>
 
@@ -79,7 +80,7 @@ export default function LandingPage() {
             className="right-image"
           />
         </Column>
-      </Grid>
+      </div>
       <Grid fullWidth className="info-section-row">
         <Column lg={16} md={8} sm={4}>
           <InfoSection heading="Why Choose Medi Connect?">
@@ -106,6 +107,6 @@ export default function LandingPage() {
           </InfoSection>
         </Column>
       </Grid>
-    </>
+    </div>
   );
 }

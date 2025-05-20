@@ -29,6 +29,21 @@ export function AuthProvider({ children }) {
     }
   };
 
+  const register = async (email, password, userData) => {
+    try {
+      const response = await userService.registerUser({
+        email,
+        password,
+        ...userData
+      });
+      console.log('Registration successful:', response);
+      return response;
+    } catch (error) {
+      console.error('Registration error:', error);
+      throw error;
+    }
+  };
+
   useEffect(() => {
     checkLoginStatus();
   }, []);
@@ -44,6 +59,7 @@ export function AuthProvider({ children }) {
         role,
         isLoading,
         checkLoginStatus,
+        register
       }}
     >
       {children}
